@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}
+About in Title block
+{% endblock title %}
+{% block head %}
+{% endblock head %}
+{% block body %}
+<div class="container">
+    <h3 class='text-center'>Sign Up </h3>
+    <form class="form-signUp" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control" id="fname" name="fname" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control" id="lname" name="lname" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" pattern="^[789]\d{9,9}$" required>
+            <small class="form-text text-muted">Minimum digits allowed:10, number should start with 7,8 or 9</small>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+            {% comment %} <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                else.</small> {% endcomment %}
+        </div>
+
+        <div class="form-group">
+            <label for="password1">Password</label>
+            <input type="password" class="form-control" id="password1" name="password1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+        </div>
+        <div class="form-group form-check">
+
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock body %}

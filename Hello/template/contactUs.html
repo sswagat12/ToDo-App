@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+Contact Us in Title block
+{% endblock title %}
+{% block body %}
+<div class="container my-4">
+ 
+</div>
+<h3 class='text-center'>Contact Us </h3>
+<div class="container">
+  <form method="POST" action="/contactUs">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Please enter your name" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Please enter your email" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Phone</label>
+      <input type="text" class="form-control" id="phone" name="phone" placeholder="Please enter your email" pattern="^[789]\d{9,9}$"  required>
+      <small class="form-text text-muted">Minimum digits allowed:10, number should start with 7,8 or 9</small>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Query if any</label>
+      <input type="text" class="form-control" id="queryIfAny" name="queryIfAny" placeholder="Please enter your email">
+    </div>
+    <input class="btn btn-primary" type="submit" value="Submit">
+  </form>
+</div>
+{% endblock body %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+About in Title block
+{% endblock title %}
+{% block body %}
+<div class="container">
+<h3 class='text-center'>Login </h3>
+    <form class="form-login" method="POST">
+    {%csrf_token%}
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username" required>
+          <small id="usernameHelp" class="form-text text-muted">Please sign up in case you haven't done it yet</small>
+        </div>
+        <div class="form-group">
+          <label for="password1">Password</label>
+          <input type="password" class="form-control" id="password1" name="password1" required>
+          <small id="passwordHelp" class="form-text text-muted">Secured login</small>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+{% endblock body %}
